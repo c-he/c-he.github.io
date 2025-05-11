@@ -31,7 +31,7 @@ table {
   }
 
   th {
-    font-weight: bold;
+    font-weight: normal;
   }
 }
 
@@ -217,7 +217,7 @@ ul.task-list input[type="checkbox"] {
 
 @media (min-width: 576px) {
   .profile {
-    width: 30%;
+    width: 25%;
 
     .address {
       p {
@@ -395,13 +395,21 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+// News
+
+// here I hack the padding directly
+.news table.table-sm th, table.table-sm td {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
 // Social (bottom)
 
 .social {
   text-align: center;
 
   .contact-icons {
-    font-size: 4rem;
+    font-size: 2rem;
 
     a {
       img {
@@ -727,19 +735,24 @@ footer.sticky-bottom {
     margin-top: 0;
 
     li {
-      margin-bottom: 1rem;
+      min-height: 110px;
+      margin-bottom: 2.5rem;
 
       .preview {
       }
 
       .abbr {
+        height: 8rem;
         margin-bottom: 0.5rem;
 
         abbr {
           display: inline-block;
           background-color: var(--global-theme-color);
-          margin-bottom: 0.5rem;
           color: var(--global-card-bg-color) !important;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          position: absolute;
+          top: -8px;
 
           a {
             color: white;
@@ -762,7 +775,8 @@ footer.sticky-bottom {
 
       .author {
         a {
-          border-bottom: 1px dashed var(--global-theme-color);
+          color: var(--global-text-color);
+          border-bottom: 1px dashed var(--global-text-color);
 
           &:hover {
             border-bottom-style: solid;
@@ -773,6 +787,7 @@ footer.sticky-bottom {
         > em {
           border-bottom: 1px solid;
           font-style: normal;
+          font-weight: bolder;
         }
 
         > span.more-authors {
@@ -787,6 +802,10 @@ footer.sticky-bottom {
         }
       }
 
+      .note-color {
+        color: var(--global-hl-color);
+      }
+
       .links {
         a.btn {
           color: var(--global-text-color);
@@ -798,7 +817,8 @@ footer.sticky-bottom {
           margin-left: 0;
 
           &:hover {
-            color: var(--global-theme-color);
+            color: white;
+            background-color: var(--global-theme-color);
             border-color: var(--global-theme-color);
           }
         }

@@ -1,17 +1,14 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: <span>chengan (dot) he [at] yale (dot) edu</span>&ensp;<b>|</b>&ensp;<a target="_blank" href="assets/pdf/che_cv.pdf">[CV]</a>
 
 profile:
   align: right
-  image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+  image: profile.png
+  image_circular: true # crops the image to make it circular
+  more_info: 
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -20,15 +17,11 @@ announcements:
   enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
-
-latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I'm a final-year Ph.D. student in the Computer Graphics Group at Yale University, advised by [Prof. Holly Rushmeier](https://graphics.cs.yale.edu/people/holly-rushmeier). 
+My research lies at the intersection of computer graphics and 3D computer vision, with prior work spanning 3D reconstruction, reflectance capture, and material appearance modeling. More recently, I have focused on **high-quality human digitization**, leveraging neural representations to model human motion, hair, head, etc.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+During my Ph.D., I interned at Adobe Research twice (Summer 2021, Summer 2022), working with [Dr. Yi Zhou](https://zhouyisjtu.github.io/) on projects related to [neural motion fields](/projects/nemf/) and [parametric 3D hair modeling](/projects/perm). In Summer 2024, I interned at Meta Codec Avatars Lab with [Dr. Giljoo Nam](https://sites.google.com/view/gjnam), contributing to research on [universal 3D hair modeling](/projects/3dgh).
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Prior to Yale, I obtained my bachelor's degree from Zhejiang University, under the supervision of [Prof. Hongzhi Wu](http://hongzhiwu.com/).

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>3DGH: 3D Head Generation with Composable Hair and Face</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/css/bulma.min.css">
+    <link rel="stylesheet" href="../static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="../static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="../static/js/fontawesome.all.min.js"></script>
+    <script src="../static/js/bulma-carousel.min.js"></script>
+    <script src="../static/js/bulma-slider.min.js"></script>
+    <script src="../static/js/index.js"></script>
+    <script src="../static/js/macros.js"></script>
+
+    <style>
+        .caption {
+            font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+            font-weight: bold;
+            margin-top: 4px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-2 publication-title">3DGH: 3D Head Generation with Composable Hair and Face</h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <script>getConst("me");</script><sup>2</sup>,
+                            </span>
+                            <span class="author-block">
+                                <script>getConst("junxuan");</script><sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                                <script>getConst("tobias");</script><sup>3</sup>,
+                            </span>
+                            <span class="author-block">
+                                <script>getConst("artem");</script><sup>3</sup>,
+                            </span>
+                            <span class="author-block">
+                                <script>getConst("shunsuke");</script><sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                                <script>getConst("qytan");</script><sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                                <script>getConst("javier");</script><sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                                <script>getConst("chencao");</script><sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                                <script>getConst("holly");</script><sup>2</sup>,
+                            </span>
+                            <span class="author-block">
+                                <script>getConst("giljoo");</script><sup>1</sup>
+                            </span>
+                        </div>
+
+                        <div class="is-size-6 publication-authors">
+                            <span class="author-block"><sup>1</sup>Meta Codec Avatars Lab,</span>
+                            <span class="author-block"><sup>2</sup>Yale University,</span>
+                            <span class="author-block"><sup>3</sup>Technical University of Munich</span>
+                        </div>
+
+                        <div class="is-size-5 column has-text-centered">
+                            SIGGRAPH 2025
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- Supplemental Link. -->
+                                <span class="link-block">
+                                    <a target="_blank" href="supp.pdf" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>Supp.</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            We present 3DGH, an unconditional generative model for 3D human heads with composable hair and face components.
+                            Unlike previous work that entangles the modeling of hair and face, we propose to separate them using a novel data representation with template-based 3D Gaussian Splatting,
+                            in which deformable hair geometry is introduced to capture the geometric variations across different hairstyles. Based on this data representation, we design a 3D GAN-based
+                            architecture with dual generators and employ a cross-attention mechanism to model the inherent correlation between hair and face. The model is trained on synthetic
+                            renderings using carefully designed objectives to stabilize training and facilitate hair-face separation. We conduct extensive experiments to validate the design choice of
+                            3DGH, and evaluate it both qualitatively and quantitatively by comparing with several state-of-the-art 3D GAN methods, demonstrating its effectiveness in unconditional
+                            full-head image synthesis and composable 3D hairstyle editing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--/ Abstract. -->
+        </div>
+    </section>
+
+    <section class="hero teaser">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+                <img src="assets/teaser.png" class="center" />
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- Full-Head Image Synthesis. -->
+            <div class="columns is-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-3">Full-Head Image Synthesis</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            Here we show 4 samples from our model with full-head rendering.
+                        </p>
+                        <div class="columns is-full-width">
+                            <div class="column is-3">
+                                <video poster="" autoplay controls muted loop playsinline height="100%">
+                                    <source src="assets/video/full-head/seed0006.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="column is-3">
+                                <video poster="" autoplay controls muted loop playsinline height="100%">
+                                    <source src="assets/video/full-head/seed0009.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="column is-3">
+                                <video poster="" autoplay controls muted loop playsinline height="100%">
+                                    <source src="assets/video/full-head/seed0056.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="column is-3">
+                                <video poster="" autoplay controls muted loop playsinline height="100%">
+                                    <source src="assets/video/full-head/seed0072.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+            <!--/ Full-Head Image Synthesis. -->
+
+
+            <!-- 3D Hairstyle Editing. -->
+            <div class="columns is-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-3">3D Hairstyle Editing</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            Here we show 3D hairstyle editing examples of our method. We achieve this by adjusting the intermediate latent codes for hair and face. From left to right: the original
+                            example, the reference hairstyle, and the edited (composed) result.
+                        </p>
+                        <div class="columns is-full-width">
+                            <div class="column is-4">
+                                <p class="caption">Original</p>
+                                <video poster="" autoplay controls muted loop playsinline height="100%">
+                                    <source src="assets/video/3d-hair-editing/seed0052.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="column is-4">
+                                <p class="caption">Reference Hair</p>
+                                <video poster="" autoplay controls muted loop playsinline height="100%">
+                                    <source src="assets/video/3d-hair-editing/seed0048.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="column is-4">
+                                <p class="caption">Edited Result</p>
+                                <video poster="" autoplay controls muted loop playsinline height="100%">
+                                    <source src="assets/video/3d-hair-editing/seed0052-0048.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                        <div class="columns is-full-width">
+                            <div class="column is-4">
+                                <video poster="" autoplay controls muted loop playsinline height="100%">
+                                    <source src="assets/video/3d-hair-editing/seed0052.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="column is-4">
+                                <video poster="" autoplay controls muted loop playsinline height="100%">
+                                    <source src="assets/video/3d-hair-editing/seed0029.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="column is-4">
+                                <video poster="" autoplay controls muted loop playsinline height="100%">
+                                    <source src="assets/video/3d-hair-editing/seed0052-0029.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                        <div class="columns is-full-width">
+                            <div class="column is-4">
+                                <video poster="" autoplay controls muted loop playsinline height="100%">
+                                    <source src="assets/video/3d-hair-editing/seed0052.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="column is-4">
+                                <video poster="" autoplay controls muted loop playsinline height="100%">
+                                    <source src="assets/video/3d-hair-editing/seed0003.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="column is-4">
+                                <video poster="" autoplay controls muted loop playsinline height="100%">
+                                    <source src="assets/video/3d-hair-editing/seed0052-0003.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/ 3D Hairstyle Editing. -->
+
+            <!-- Hair-Face Correlation. -->
+            <div class="columns is-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-3">Hair-Face Correlation</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            As we explicitly model the hair-face correlation, we can control the influence of face on the composed hairstyles by interpolating the CFG scale factor \(\omega\)
+                            introduced in our
+                            method. Here we show an example on the effect of hair-face correlation. From left to right: the reference face, the reference hair, intermediate composed results generated
+                            by
+                            interpolating \(\omega\) from 0 to 1. When \(\omega\) is small, the influence of hair-face correlation is relatively weak, leading to composition results where the
+                            hairstyle looks more
+                            similar to the reference. With the increase of \(\omega\), the influence of hair-face correlation gradually becomes stronger, thus causing the composed hairstyle to change
+                            towards a
+                            direction more plausible for the given face (in this case, becomes shorter).
+                        </p>
+                        <div class="columns is-full-width">
+                            <div class="column is-4">
+                                <video poster="" autoplay controls muted loop playsinline height="100%">
+                                    <source src="assets/video/hair-face-corr/seed0002.mp4" type="video/mp4">
+                                </video>
+                                <p class="caption">Reference Face</p>
+                            </div>
+                            <div class="column is-4">
+                                <video poster="" autoplay controls muted loop playsinline height="100%">
+                                    <source src="assets/video/hair-face-corr/seed0004.mp4" type="video/mp4">
+                                </video>
+                                <p class="caption">Reference Hair</p>
+                            </div>
+                            <div class="column is-4">
+                                <video poster="" autoplay controls muted loop playsinline height="100%">
+                                    <source src="assets/video/hair-face-corr/seed0002-0004.mp4" type="video/mp4">
+                                </video>
+                                <p class="caption">Interpolation of \(\omega\)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/ Hair-Face Correlation. -->
+            </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>@article{he2025head,
+    title = {3DGH: 3D Head Generation with Composable Hair and Face},
+    author = {He, Chengan and Li, Junxuan and Kirschstein, Tobias and Sevastopolsky, Artem and Saito, Shunsuke and Tan, Qingyang and Romero, Javier and Cao, Chen and Rushmeier, Holly and Nam, Giljoo},
+    journal={ACM Transactions on Graphics},
+    volume={44},
+    number={4},
+    pages={1--12},
+    year={2025},
+    publisher={ACM New York, NY, USA}
+}</code></pre>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p>
+                            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                                Commons Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+                        <p>
+                            This webpage is built with the template from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>. We sincerely thank <a href="https://keunhong.com/">Keunhong
+                                Park</a> for developing and open-sourcing this template.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
