@@ -104,6 +104,10 @@
                     {%- assign url = p.permalink -%}
                   {%- elsif p.permalink contains '/blog/' -%}
                     {%- assign url = '/blog/' -%}
+                  {% elsif p.title contains 'News' %}
+                    {%- assign url = '/#news' -%}
+                  {% elsif p.title contains 'Publications' %}
+                    {%- assign url = '/#publications' -%}
                   {%- else -%}
                     {%- assign url = p.url -%}
                   {%- endif %}
