@@ -22,6 +22,7 @@ announcements:
 I'm a final-year Ph.D. student in the Computer Graphics Group at Yale University, advised by [Prof. Holly Rushmeier](https://graphics.cs.yale.edu/people/holly-rushmeier). 
 My research lies at the intersection of computer graphics and 3D computer vision, with prior work spanning 3D reconstruction, reflectance capture, and material appearance modeling. More recently, I have focused on **high-quality human digitization**, leveraging neural representations to model human motion, hair, head, etc.
 
-During my Ph.D., I interned at Adobe Research twice (Summer 2021, Summer 2022), working with [Dr. Yi Zhou](https://zhouyisjtu.github.io/) on projects related to [neural motion fields](/projects/nemf/) and [parametric 3D hair modeling](/projects/perm). In Summer 2024, I interned at Meta Codec Avatars Lab with [Dr. Giljoo Nam](https://sites.google.com/view/gjnam), contributing to research on [universal 3D hair modeling](/projects/3dgh).
+During my Ph.D., I interned at Adobe Research twice (Summer 2021, Summer 2022), working with [Dr. Yi Zhou](https://zhouyisjtu.github.io/) on projects related to [neural motion fields](/projects/nemf/) and [parametric 3D hair modeling](/projects/perm). In Summer 2024, I interned at Meta Codec Avatars Lab with [Dr. Giljoo Nam](https://sites.google.com/view/gjnam).
+<!-- contributing to research on [universal 3D hair modeling](/projects/3dgh). -->
 
 Prior to Yale, I obtained my bachelor's degree from Zhejiang University, under the supervision of [Prof. Hongzhi Wu](http://hongzhiwu.com/).
