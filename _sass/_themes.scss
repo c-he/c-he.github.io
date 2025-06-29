@@ -46,6 +46,8 @@
   --global-danger-block-title: #c00;
 
   --global-hl-color: #e34234;
+  --global-notice-color-bg: #fffbeb;
+  --global-notice-color-border: #ffe082;
 
   #light-toggle-system {
     padding-left: 10px;
@@ -119,6 +121,10 @@ html[data-theme="dark"] {
   --global-danger-block-bg: #ffe0e0;
   --global-danger-block-text: #600;
   --global-danger-block-title: #c00;
+
+  --global-hl-color: #e34234;
+  --global-notice-color-bg: #212529;
+  --global-notice-color-border: #00356b;
 
   .only-light {
     display: none;
