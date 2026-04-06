@@ -178,7 +178,7 @@
     {% capture entryabbr %}{% endcapture %}
     {% endif %}
     {% if entry.note %}
-    {% capture entrynote %}<b><span class="note-color">{{ "(" }}{{entry.note}}{{ ")" }}</span></b>{% endcapture %}
+    {% capture entrynote %}<span class="note-color">⭐ {{entry.note}}</span>{% endcapture %}
     {% else %}
     {% capture entrynote %}{% endcapture %}
     {% endif %}

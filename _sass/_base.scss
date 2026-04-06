@@ -749,10 +749,12 @@ footer.sticky-bottom {
           display: inline-block;
           background-color: var(--global-theme-color);
           color: var(--global-card-bg-color) !important;
-          padding-left: 1rem;
-          padding-right: 1rem;
+          padding-left: 0.8rem;
+          padding-right: 0.8rem;
           position: absolute;
           top: -8px;
+          font-weight: 500;
+          font-size: 0.8rem;
 
           a {
             color: white;
@@ -803,7 +805,16 @@ footer.sticky-bottom {
       }
 
       .note-color {
+        display: inline-block;
         color: var(--global-hl-color);
+        background-color: var(--global-hl-color-light);
+        border: 1px solid var(--global-hl-color);
+        padding: 0rem 0.25rem;
+        border-radius: 0.25rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        vertical-align: middle;
       }
 
       .links {
