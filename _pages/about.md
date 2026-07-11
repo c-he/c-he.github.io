@@ -19,12 +19,10 @@ announcements:
   limit: 10 # leave blank to include all the news in the `_news` folder
 ---
 
-I’m a Research Scientist at Meta, working on **human-centric computer graphics and vision** problems. Before joining Meta, I completed my Ph.D. in the Computer Graphics Group at Yale University, advised by [Prof. Holly Rushmeier](https://graphics.cs.yale.edu/people/holly-rushmeier). My doctoral research focused on high-quality human digitization, leveraging neural representations to model human motion, hair, and head. More broadly, my prior work spans 3D reconstruction, reflectance capture, and material appearance modeling.
+I’m a Research Scientist at Meta, working on **human-centric computer graphics and vision** problems. My research combines physical principles with data-driven learning to capture how humans look, move, and interact with the physical world. My earlier work also spanned human digitization, reflectance capture, and material appearance modeling.
 
-During my Ph.D., I interned at Adobe Research twice (Summer 2021, Summer 2022), working with [Dr. Yi Zhou](https://zhouyisjtu.github.io/) on projects related to [neural motion fields](https://c-he.github.io/NeMF/) and [parametric 3D hair modeling](https://c-he.github.io/perm/). In Summer 2024, I interned at Meta Codec Avatars Lab with [Dr. Giljoo Nam](https://sites.google.com/view/gjnam), contributing to research on [universal 3D hair modeling](https://c-he.github.io/3DGH/).
+Before joining Meta, I completed my Ph.D. in the Computer Graphics Group at Yale University, advised by [Prof. Holly Rushmeier](https://graphics.cs.yale.edu/people/holly-rushmeier). Prior to Yale, I earned my bachelor’s degree from Zhejiang University, under the supervision of [Prof. Hongzhi Wu](http://hongzhiwu.com/).
 
-Prior to Yale, I obtained my bachelor's degree from Zhejiang University, under the supervision of [Prof. Hongzhi Wu](http://hongzhiwu.com/).
-
-<div style="background-color: var(--global-notice-color-bg); padding: 15px; border: 2px solid var(--global-notice-color-border); border-radius: 5px; margin-bottom: 1em">
+<div style="display: flow-root; background-color: var(--global-notice-color-bg); padding: 22px 15px; border: 2px solid var(--global-notice-color-border); border-radius: 5px; margin-bottom: 1em">
   💡 I'm open to research collaborations. If you see alignment in our research interests or wish to explore potential opportunities, feel free to email me directly.
 </div>

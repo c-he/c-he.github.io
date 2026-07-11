@@ -429,6 +429,14 @@ ul.task-list input[type="checkbox"] {
         }
       }
 
+      i {
+        vertical-align: middle; // align all icons on their optical center, not font baseline
+
+        &.ai {
+          font-size: 1.1em; // academicons render smaller than FontAwesome; match sizes
+        }
+      }
+
       i::before {
         color: var(--global-text-color);
         transition-property: all 0.2s ease-in-out;
@@ -805,17 +813,28 @@ footer.sticky-bottom {
       }
 
       .note-color {
-        display: inline-block;
-        color: var(--global-hl-color);
-        background-color: var(--global-hl-color-light);
-        border: 1px solid var(--global-hl-color);
-        padding: 0rem 0.25rem;
-        margin-left: 0.3rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3em;
+        color: var(--global-spotlight-color);
+        background-color: var(--global-spotlight-bg);
+        border: 1px solid var(--global-spotlight-color);
+        padding: 0.1em 0.5em;
+        margin-left: 0.4rem;
         border-radius: 0.25rem;
-        font-size: 0.8rem;
-        font-weight: 500;
+        font-size: 0.72rem;
+        font-weight: 600;
+        font-style: normal;
+        letter-spacing: 0.04em;
+        line-height: 1.3;
         text-transform: uppercase;
         vertical-align: middle;
+
+        .note-star {
+          font-size: 0.85em;
+          line-height: 1;
+          transform: translateY(-0.05em); // optical-center the emoji with the uppercase caps
+        }
       }
 
       .links {
