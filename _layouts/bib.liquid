@@ -27,12 +27,16 @@
       {% endif %}
       {% if entry.preview %}
         {% if entry.preview contains '://' %}
-          <img class="preview z-depth-1 rounded" src="{{ entry.preview }}">
+          <img class="preview z-depth-1 rounded" src="{{ entry.preview }}" loading="lazy">
+        {% elsif entry.preview contains '.mp4' or entry.preview contains '.webm' %}
+          <video class="preview z-depth-1 rounded" autoplay loop muted playsinline preload="metadata" style="width: 100%">
+            <source src="{{ entry.preview | prepend: '/assets/img/teaser/' }}" type="video/mp4">
+          </video>
         {% else %}
           {% assign entry_path = entry.preview | prepend: '/assets/img/teaser/' %}
           {%
             include figure.liquid
-            loading="eager"
+            loading="lazy"
             path=entry_path
             sizes = "200px"
             class="preview z-depth-1 rounded"
