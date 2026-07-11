@@ -819,7 +819,7 @@ footer.sticky-bottom {
         color: var(--global-spotlight-color);
         background-color: var(--global-spotlight-bg);
         border: 1px solid var(--global-spotlight-color);
-        padding: 0.1em 0.5em;
+        padding: 0.15em 0.5em 0.05em; // extra top optically centers the caps (no descenders sit low)
         margin-left: 0.4rem;
         border-radius: 0.25rem;
         font-size: 0.72rem;
@@ -833,7 +833,6 @@ footer.sticky-bottom {
         .note-star {
           font-size: 0.85em;
           line-height: 1;
-          transform: translateY(-0.05em); // optical-center the emoji with the uppercase caps
         }
       }
 
